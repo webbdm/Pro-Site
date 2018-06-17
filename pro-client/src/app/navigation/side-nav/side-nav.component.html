@@ -1,8 +1,11 @@
-<div>
- <ul>
-   <li>Blog</li>
-   <li>Resume</li>
-   <li>Projects</li>
-   <li>Contact</li>
- </ul>
+<div class="side-nav-wrapper">
+  <ul class="nav-links">
+    <li class="text-link"><a [routerLink]="['/blog']">BLOG</a></li>
+    <li class="text-link"><a [routerLink]="['/resume']">RESUME</a></li>
+    <li>
+      <a [routerLink]="['/']"><img class="logo" src="{{logo_url}}" /></a>
+    </li>
+    <li class="text-link"><a [routerLink]="['/contact']">CONTACT</a></li>
+    <li class="text-link"><a [routerLink]="['/projects']">PROJECTS</a></li>
+  </ul>
 </div>
