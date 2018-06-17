@@ -1,0 +1,13 @@
+<div class="blog-wrapper">
+  <div class="blog-sidebar">
+    sidebar
+  </div>
+  <div class="blog-main">
+    <div class="blog-list" *ngFor="let post of posts">
+      <div class="blog-post">
+        <h1>{{post.title}}</h1>
+        <p>{{post.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
