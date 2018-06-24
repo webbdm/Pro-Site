@@ -21,8 +21,5 @@ export class BlogComponent implements OnInit {
       },
         error => this.errorMessage = <any>error);
   }
-
-  temp_image = 'https://raw.githubusercontent.com/nss-evening-cohort-05/challenge-static-web-html-webbdm/master/images/gsmbackground.png';
-  isEditing = false;
-
+  
 }

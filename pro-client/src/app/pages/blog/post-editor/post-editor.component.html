@@ -1,3 +1,12 @@
-<p>
-  post-editor works!
-</p>
+<div class="blog-post-image">
+  <img [src]="temp_image" />
+</div>
+
+<div class="blog-post-content">
+  <div class="control">
+    <input class="input" type="text" placeholder="Title" value="{{post.title}}">
+  </div>
+  <div class="control">
+    <textarea class="textarea" type="text" placeholder="Description" value="{{post.description}}"></textarea>
+  </div>
+</div>

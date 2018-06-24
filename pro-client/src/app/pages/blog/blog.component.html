@@ -6,10 +6,14 @@
   </div>
   <div class="blog-main">
     <div class="blog-list" *ngFor="let post of posts">
-      <div class="blog-post">
-        <post-viewer *ngIf="!isEditing" [post]="post"></post-viewer>
-        <post-editor *ngIf="isEditing" ></post-editor>
-      </div>
+    
+        <!-- <a class="button" (click)='toggleEdit()'>{{isEditing ? 'Cancel' : 'Edit'}}</a> -->
+        <blog-post [post]="post"></blog-post>
+        <!-- <div class="blog-post-wrapper">
+          <post-viewer *ngIf="!isEditing" [post]="post"></post-viewer>
+          <post-editor *ngIf="isEditing" [post]="post"></post-editor>
+        </div> -->
+
     </div>
   </div>
 </div>

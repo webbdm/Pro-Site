@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostEditorComponent } from './pages/blog/post-editor/post-editor.component';
 import { PostViewerComponent } from './pages/blog/post-viewer/post-viewer.component';
+import { BlogPostComponent } from './pages/blog/blog-post/blog-post.component';
 
 
 
@@ -20,7 +21,8 @@ import { PostViewerComponent } from './pages/blog/post-viewer/post-viewer.compon
     HomeComponent,
     BlogComponent,
     PostEditorComponent,
-    PostViewerComponent
+    PostViewerComponent,
+    BlogPostComponent
   ],
   imports: [
     BrowserModule,

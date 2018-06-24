@@ -1,0 +1,10 @@
+<div class="blog-post">
+  <div class="blog-post-wrapper">
+    <span class="icon is-pulled-right">
+      <i class="fas fa-edit" *ngIf="!isEditing" (click)='toggleEdit()'></i>
+      <i class="fas fa-times" *ngIf="isEditing" (click)='toggleEdit()'></i>
+    </span>
+    <post-viewer *ngIf="!isEditing" [post]="post"></post-viewer>
+    <post-editor *ngIf="isEditing" [post]="post"></post-editor>
+  </div>
+</div>
