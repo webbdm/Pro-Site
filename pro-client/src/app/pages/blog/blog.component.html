@@ -1,20 +1,14 @@
 <div class="blog-wrapper">
   <div class="blog-sidebar">
-    sidebar
+    <div class="blog-links" *ngFor="let post of posts">
+      <h3>{{post.title}}</h3>
+    </div>
   </div>
   <div class="blog-main">
     <div class="blog-list" *ngFor="let post of posts">
       <div class="blog-post">
-        <div class="blog-post-wrapper">
-          <div class="blog-post-image">
-            <img [src]="temp_image" />
-          </div>
-
-          <div class="blog-post-content">
-            <h1>{{post.title}}</h1>
-            <p>{{post.description}}</p>
-          </div>
-        </div>
+        <post-viewer *ngIf="!isEditing" [post]="post"></post-viewer>
+        <post-editor *ngIf="isEditing" ></post-editor>
       </div>
     </div>
   </div>

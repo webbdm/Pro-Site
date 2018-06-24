@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SideNavComponent } from './navigation/side-nav/side-nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { PostEditorComponent } from './pages/blog/post-editor/post-editor.component';
+import { PostViewerComponent } from './pages/blog/post-viewer/post-viewer.component';
 
 
 
@@ -16,7 +18,9 @@ import { BlogComponent } from './pages/blog/blog.component';
     AppComponent,
     SideNavComponent,
     HomeComponent,
-    BlogComponent
+    BlogComponent,
+    PostEditorComponent,
+    PostViewerComponent
   ],
   imports: [
     BrowserModule,
