@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'blog-post',
@@ -7,16 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BlogPostComponent implements OnInit {
   @Input() post: object;
-  isEditing: boolean;
+  @Output() editing: boolean;
+  @Output() onToggle = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-    this.isEditing = false;
+    this.editing = false;
   }
 
   toggleEdit(): void {
-    this.isEditing = !this.isEditing;
+    this.editing = !this.editing;
   }
 
 }
