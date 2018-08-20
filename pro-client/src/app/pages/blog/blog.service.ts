@@ -21,6 +21,11 @@ export class BlogService {
         return;
     }
 
+    updatePost(): Observable<IPost>{
+        console.log("update");
+        return;
+    }
+
     private handleError(err: HttpErrorResponse) {
         console.log(err.message);
         return Observable.throw(err.message);
