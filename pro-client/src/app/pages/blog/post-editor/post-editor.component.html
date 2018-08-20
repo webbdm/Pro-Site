@@ -10,7 +10,7 @@
     <textarea class="textarea" type="text" placeholder="Description" value="{{post.description}}"></textarea>
   </div>
   <div class="btn-wrapper">
-    <button class="btn-save"(click)='onToggle()'>Save Changes</button>
-    <button class="btn-cancel">Cancel</button>
+    <button class="btn-save" (click)='onSave(post)'>Save Changes</button>
+    <button class="btn-cancel" (click)='onToggle()'>Cancel</button>
   </div>
 </div>
