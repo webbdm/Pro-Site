@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from './blog.service';
-import { IPost } from './post';
+import { Post } from './post';
 
 @Component({
   selector: 'app-blog',
@@ -8,18 +8,22 @@ import { IPost } from './post';
   styleUrls: ['./blog.component.sass']
 })
 export class BlogComponent implements OnInit {
-  posts: IPost[] = [];
+  posts: Post[] = [];
   errorMessage: string;
 
   constructor(private _blogService: BlogService) {
   }
 
-  ngOnInit(): void {
+  fetchData(): void {
     this._blogService.getPosts()
       .subscribe(posts => {
         this.posts = posts
       },
         error => this.errorMessage = <any>error);
+  }
+
+  ngOnInit(): void {
+    this.fetchData();
   }
 
 }
