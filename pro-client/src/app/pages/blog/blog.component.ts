@@ -14,12 +14,16 @@ export class BlogComponent implements OnInit {
   constructor(private _blogService: BlogService) {
   }
 
-  ngOnInit(): void {
+  fetchData(): void {
     this._blogService.getPosts()
       .subscribe(posts => {
         this.posts = posts
       },
         error => this.errorMessage = <any>error);
   }
-  
+
+  ngOnInit(): void {
+    this.fetchData();
+  }
+
 }

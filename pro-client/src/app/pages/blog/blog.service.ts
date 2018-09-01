@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, Observer } from "rxjs";
 import { Post } from "./post";
 import { tap, catchError } from "rxjs/operators";
 
@@ -13,7 +13,6 @@ export class BlogService {
     private _blogUrl = `http://blog.test/posts`;
 
     constructor(private _http: HttpClient) { }
-
 
 
     getPosts(): Observable<any> {
@@ -29,6 +28,12 @@ export class BlogService {
     updatePost(post: Post): Observable<any> {
         return this._http.put(this._blogUrl + `/${post.id}`, JSON.stringify(post), httpOptions)
             .pipe(tap(data => console.log(`updated post id=${post.id}`)),
+                catchError(this.handleError))
+    }
+
+    deletePost(post: Post): Observable<any>{
+        return this._http.delete(this._blogUrl + `/${post.id}`, httpOptions)
+            .pipe(tap(data => console.log(`deleted post id=${post.id}`)),
                 catchError(this.handleError))
     }
 

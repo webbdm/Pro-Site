@@ -8,7 +8,7 @@
     <div class="blog-list" *ngFor="let post of posts">
     
         <!-- <a class="button" (click)='toggleEdit()'>{{isEditing ? 'Cancel' : 'Edit'}}</a> -->
-        <blog-post [post]="post"></blog-post>
+        <blog-post fetchData="fetchData()" [post]="post"></blog-post>
         <!-- <div class="blog-post-wrapper">
           <post-viewer *ngIf="!isEditing" [post]="post"></post-viewer>
           <post-editor *ngIf="isEditing" [post]="post"></post-editor>

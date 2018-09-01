@@ -28,6 +28,11 @@ export class PostEditorComponent implements OnInit {
     this.onToggle();
   }
 
+  onDelete(post: Post): void {
+    this._blogService.deletePost(post).subscribe();
+    // call a redirect event to posts list
+  }
+
   temp_image = 'https://raw.githubusercontent.com/nss-evening-cohort-05/challenge-static-web-html-webbdm/master/images/gsmbackground.png';
 
 }
