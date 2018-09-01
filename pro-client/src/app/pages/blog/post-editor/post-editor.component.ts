@@ -24,7 +24,7 @@ export class PostEditorComponent implements OnInit {
   }
 
   onSave(post: Post): void {
-    this._blogService.updatePost(post);
+    this._blogService.updatePost(post).subscribe();
     this.onToggle();
   }
 

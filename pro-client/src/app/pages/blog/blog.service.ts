@@ -14,23 +14,22 @@ export class BlogService {
 
     constructor(private _http: HttpClient) { }
 
-    
+
 
     getPosts(): Observable<any> {
         return this._http.get(this._blogUrl)
             .pipe(tap(data => console.log(JSON.stringify(data))),
-            catchError(this.handleError))
+                catchError(this.handleError))
     }
 
-    getSinglePost(): Observable<any>{
+    getSinglePost(): Observable<any> {
         return;
     }
 
-    updatePost (post: Post): Observable<any> {
-        console.log(`updated ${post.title}`);
-        return this._http.put(this._blogUrl + `${post}`, post, httpOptions)
+    updatePost(post: Post): Observable<any> {
+        return this._http.put(this._blogUrl + `/${post.id}`, JSON.stringify(post), httpOptions)
             .pipe(tap(data => console.log(`updated post id=${post.id}`)),
-            catchError(this.handleError))
+                catchError(this.handleError))
     }
 
     private handleError(err: HttpErrorResponse) {

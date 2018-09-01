@@ -1,7 +1,7 @@
 <div class="blog-post-image">
   <img [src]="temp_image" />
   <div class="post-title-wrapper">
-    <input class="post-title" type="text" placeholder="Title" value="{{post.title}}">
+    <input class="post-title" type="text" [(ngModel)]="post.title" placeholder="Title" value="{{post.title}}">
   </div>
 </div>
 
