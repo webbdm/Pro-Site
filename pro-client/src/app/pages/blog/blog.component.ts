@@ -4,10 +4,10 @@ import { Post } from './post';
 
 @Component({
   selector: 'app-blog',
-  templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.sass']
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.sass']
 })
-export class BlogListComponent implements OnInit {
+export class BlogComponent implements OnInit {
   posts: Post[] = [];
   errorMessage: string;
 
