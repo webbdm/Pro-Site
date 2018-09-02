@@ -1,12 +1,14 @@
-<div class="blog-post-wrapper" *ngFor="let post of posts">
-    <div class="blog-post-image">
-        <img [src]="temp_image" />
-    </div>
+<div class="post-list">
+    <div class="blog-post-wrapper" *ngFor="let post of posts">
+        <div class="blog-post-image">
+            <img [src]="temp_image" />
+        </div>
 
-    <div class="blog-post-content">
-        <a [routerLink]="post.id">
-            <h3 class="post-title">{{post.title}}</h3>
-        </a>
-        <p class="post-description">{{post.description}}</p>
+        <div class="blog-post-content">
+            <a [routerLink]="post.id">
+                <h3 class="post-title">{{post.title}}</h3>
+            </a>
+            <p class="post-description">{{post.description}}</p>
+        </div>
     </div>
 </div>

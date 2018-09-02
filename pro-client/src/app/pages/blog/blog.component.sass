@@ -1,18 +1,19 @@
 .blog-wrapper
-    margin-top: 15px
-    padding: 20px
+    display: grid;
+    grid-template-columns: 300px 1fr
+    grid-template-rows: auto 1fr 
+    width: 100%
+    height: auto
 
     .blog-sidebar
         background-color: rgba(21, 32, 72, .9)
-        width: 300px
-        height: 600px
-        padding: 10px
-        position: fixed
-        left: 0
+        min-height: 100%
 
     .blog-main 
         display: flex
         flex-flow: row wrap
-        justify-content: space-around 
-        width: 60%
-        margin-left: 400px
+        justify-content: space-around
+
+        
+
+ 
