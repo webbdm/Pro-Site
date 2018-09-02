@@ -20,4 +20,6 @@ export class BlogPostComponent implements OnInit {
     this.editing = !this.editing;
   }
 
+  
+
 }

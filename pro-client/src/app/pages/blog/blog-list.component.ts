@@ -4,10 +4,10 @@ import { Post } from './post';
 
 @Component({
   selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.sass']
+  templateUrl: './blog-list.component.html',
+  styleUrls: ['./blog-list.component.sass']
 })
-export class BlogComponent implements OnInit {
+export class BlogListComponent implements OnInit {
   posts: Post[] = [];
   errorMessage: string;
 
@@ -25,5 +25,8 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.fetchData();
   }
+
+  temp_image = 'https://raw.githubusercontent.com/nss-evening-cohort-05/challenge-static-web-html-webbdm/master/images/gsmbackground.png';
+
 
 }

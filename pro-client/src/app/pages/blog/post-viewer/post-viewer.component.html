@@ -3,11 +3,12 @@
   <div class="post-title"> 
     <span>{{post.title}}</span>
   </div>
-  <span class="btn-edit">
+  <!-- <span class="btn-edit">
       <i class="fas fa-edit" (click)='onToggle()'></i>
-  </span>
+  </span> -->
 </div>
 
 <div class="blog-post-content">
   <p>{{post.description}}</p>
+  <a [routerLink]="post.id">View</a>
 </div>

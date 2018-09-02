@@ -21,8 +21,10 @@ export class BlogService {
                 catchError(this.handleError))
     }
 
-    getSinglePost(): Observable<any> {
-        return;
+    getSinglePost(post: Post): Observable<any> {
+        return this._http.get(this._blogUrl + `/${post.id}`, httpOptions)
+            .pipe(tap(data => console.log(`got post id=${post.id}`)),
+                catchError(this.handleError))
     }
 
     updatePost(post: Post): Observable<any> {
