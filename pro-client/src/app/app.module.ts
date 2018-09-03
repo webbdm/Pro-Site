@@ -9,12 +9,9 @@ import { SideNavComponent } from './navigation/side-nav/side-nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostEditorComponent } from './pages/blog/post-editor/post-editor.component';
-import { PostViewerComponent } from './pages/blog/post-viewer/post-viewer.component';
-import { PostViewComponent } from './pages/blog/post/view/post-view.component';
+import { PostListItemComponent } from './pages/blog/post/post-list-item.component';
 import { BlogPostComponent } from './pages/blog/post/blog-post.component';
 import { PostListComponent } from './pages/blog/post-list.component';
-
-
 
 
 @NgModule({
@@ -24,8 +21,7 @@ import { PostListComponent } from './pages/blog/post-list.component';
     HomeComponent,
     BlogComponent,
     PostEditorComponent,
-    PostViewerComponent,
-    PostViewComponent,
+    PostListItemComponent,
     PostListComponent,
     BlogPostComponent
   ],

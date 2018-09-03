@@ -1,7 +1,9 @@
-<div class="blog-post">
-  <h1>Post</h1>
-  <div class="blog-post-wrapper">
-    <post-viewer *ngIf="!editing" (toggleEdit)="toggleEdit()" [post]="post"></post-viewer>
-    <!-- <post-editor *ngIf="editing" (toggleEdit)="toggleEdit()" [post]="post"></post-editor> -->
+<div class="post-wrapper">
+  <div class="post-image-main">
+    <img [src]="temp_image" />
   </div>
-</div>   
+  <div class="post-content">
+    <h2>{{post.title}}</h2>
+    <p>{{post.description}}</p>
+  </div>
+</div>
