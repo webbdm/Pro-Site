@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BlogService } from '../blog.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'blog-post',
@@ -6,14 +9,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./blog-post.component.sass']
 })
 export class BlogPostComponent implements OnInit {
-  @Input() post: object;
   @Output() editing: boolean;
   @Output() onToggle = new EventEmitter();
+  post: Post;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private _blogService: BlogService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.editing = false;
+
+    let id = this.route.snapshot.params['post'];
+    this._blogService.getSinglePost(id).subscribe(post => this.post = post);
+    
   }
 
   toggleEdit(): void {
@@ -21,6 +31,6 @@ export class BlogPostComponent implements OnInit {
   }
 
   temp_image = 'https://raw.githubusercontent.com/nss-evening-cohort-05/challenge-static-web-html-webbdm/master/images/gsmbackground.png';
-  
+
 
 }
