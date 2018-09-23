@@ -11,6 +11,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { PostEditorComponent } from './pages/blog/post/edit/post-editor.component';
 import { PostListItemComponent } from './pages/blog/post/post-list-item.component';
 import { BlogPostComponent } from './pages/blog/post/blog-post.component';
+import {ResumeComponent} from './pages/resume/resume.component';
 import { PostListComponent } from './pages/blog/post-list.component';
 import { PostViewerComponent } from './pages/blog/post/view/post-viewer.component';
 
@@ -25,7 +26,8 @@ import { PostViewerComponent } from './pages/blog/post/view/post-viewer.componen
     PostViewerComponent,
     PostListItemComponent,
     PostListComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { PostViewerComponent } from './pages/blog/post/view/post-viewer.componen
         children: [{ path: '', component: PostListComponent, pathMatch: 'full' },
                    { path: ':post', component: BlogPostComponent }]
       },
-      { path: 'resume', component: HomeComponent },
+      { path: 'resume', component: ResumeComponent },
       { path: 'contact', component: HomeComponent },
       { path: 'projects', component: HomeComponent }
     ])
