@@ -1,0 +1,18 @@
+<div class="post-wrapper">
+    <div class="post-image-main">
+        <img [src]="temp_image" />
+    </div>
+    <div class="post-content">
+        <div class="post-content-header">
+            <input [(ngModel)]="post.title"/>
+
+            <div class="btn-wrapper">
+                <button class="btn-save" (click)='onSave(post)'>Save Changes</button>
+                <button class="btn-delete" (click)='onDelete(post)'>Delete</button>
+                <button class="btn-cancel" (click)='onToggle()'>Cancel</button>
+            </div>
+        </div>
+
+        <textarea [(ngModel)]="post.description" class="post-description">{{post.description}}</textarea>
+    </div>
+</div>
