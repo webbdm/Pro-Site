@@ -17,23 +17,25 @@ export class BlogService {
 
     getPosts(): Observable<any> {
         return this._http.get(this._blogUrl)
-            .pipe(tap(data => console.log(JSON.stringify(data))),
+            .pipe(tap(data => null),
                 catchError(this.handleError))
     }
 
-    getSinglePost(): Observable<any> {
-        return;
+    getSinglePost(id: Post['id']): Observable<any> {
+        return this._http.get(this._blogUrl + `/${id}`, httpOptions)
+            .pipe(tap(null),
+                catchError(this.handleError))
     }
 
     updatePost(post: Post): Observable<any> {
         return this._http.put(this._blogUrl + `/${post.id}`, JSON.stringify(post), httpOptions)
-            .pipe(tap(data => console.log(`updated post id=${post.id}`)),
+            .pipe(tap(data => null),
                 catchError(this.handleError))
     }
 
-    deletePost(post: Post): Observable<any>{
+    deletePost(post: Post): Observable<any> {
         return this._http.delete(this._blogUrl + `/${post.id}`, httpOptions)
-            .pipe(tap(data => console.log(`deleted post id=${post.id}`)),
+            .pipe(tap(data => null),
                 catchError(this.handleError))
     }
 

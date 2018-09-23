@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 import { SideNavComponent } from './navigation/side-nav/side-nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { PostEditorComponent } from './pages/blog/post-editor/post-editor.component';
-import { PostViewerComponent } from './pages/blog/post-viewer/post-viewer.component';
-import { BlogPostComponent } from './pages/blog/blog-post/blog-post.component';
-
-
+import { PostEditorComponent } from './pages/blog/post/edit/post-editor.component';
+import { PostListItemComponent } from './pages/blog/post/post-list-item.component';
+import { BlogPostComponent } from './pages/blog/post/blog-post.component';
+import { PostListComponent } from './pages/blog/post-list.component';
+import { PostViewerComponent } from './pages/blog/post/view/post-viewer.component';
 
 
 @NgModule({
@@ -23,6 +23,8 @@ import { BlogPostComponent } from './pages/blog/blog-post/blog-post.component';
     BlogComponent,
     PostEditorComponent,
     PostViewerComponent,
+    PostListItemComponent,
+    PostListComponent,
     BlogPostComponent
   ],
   imports: [
@@ -30,11 +32,15 @@ import { BlogPostComponent } from './pages/blog/blog-post/blog-post.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent},
-      {path: 'blog', component: BlogComponent},
-      {path: 'resume', component: HomeComponent},
-      {path: 'contact', component: HomeComponent},
-      {path: 'projects', component: HomeComponent}
+      { path: '', component: HomeComponent },
+      {
+        path: 'blog', component: BlogComponent, 
+        children: [{ path: '', component: PostListComponent, pathMatch: 'full' },
+                   { path: ':post', component: BlogPostComponent }]
+      },
+      { path: 'resume', component: HomeComponent },
+      { path: 'contact', component: HomeComponent },
+      { path: 'projects', component: HomeComponent }
     ])
   ],
   providers: [],

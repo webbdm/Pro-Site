@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'post-viewer',
-  templateUrl: './post-viewer.component.html',
-  styleUrls: ['./post-viewer.component.sass']
+  selector: 'post-list-item',
+  templateUrl: './post-list-item.component.html',
+  styleUrls: ['./post-list-item.component.sass']
 })
-export class PostViewerComponent implements OnInit {
+export class PostListItemComponent implements OnInit {
   @Input() post: object;
   @Input() editing: boolean;
   @Output() toggleEdit = new EventEmitter();

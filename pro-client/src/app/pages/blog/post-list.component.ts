@@ -3,11 +3,12 @@ import { BlogService } from './blog.service';
 import { Post } from './post';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.sass']
+  selector: 'post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.sass'],
+  providers: [BlogService]
 })
-export class BlogComponent implements OnInit {
+export class PostListComponent implements OnInit{
   posts: Post[] = [];
   errorMessage: string;
 
@@ -27,6 +28,5 @@ export class BlogComponent implements OnInit {
   }
 
   temp_image = 'https://raw.githubusercontent.com/nss-evening-cohort-05/challenge-static-web-html-webbdm/master/images/gsmbackground.png';
-
 
 }
