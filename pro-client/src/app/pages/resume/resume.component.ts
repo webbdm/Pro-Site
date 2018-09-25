@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumeService } from './resume.service';
+import { Resume } from './resume';
 
 
 const skills = [
@@ -27,14 +29,26 @@ const skills = [
     styleUrls: ['./resume.component.sass']
 })
 export class ResumeComponent implements OnInit {
+    resume: Resume[] = [];
+    errorMessage: string;
 
-    constructor() { }
 
-    ngOnInit() {
+    constructor(private _resumeService: ResumeService) { }
+
+    fetchData(): void {
+        this._resumeService.getSingleResume(this.user_id)
+            .subscribe(resume => {
+                this.resume = resume
+            },
+                error => this.errorMessage = <any>error);
     }
 
-    skills = skills;
+    ngOnInit(): void {
+        this.fetchData();
+    }
 
     img_url = 'https://avatars0.githubusercontent.com/u/13399339?s=460&v=4';
+
+    user_id = 1;
 
 }
