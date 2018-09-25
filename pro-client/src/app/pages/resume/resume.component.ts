@@ -49,6 +49,6 @@ export class ResumeComponent implements OnInit {
 
     img_url = 'https://avatars0.githubusercontent.com/u/13399339?s=460&v=4';
 
-    user_id = 1;
+    user_id = 1; // Hardcoded from the Resume ID until users & auth are added
 
 }

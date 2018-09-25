@@ -22,7 +22,7 @@ export class ResumeService {
                 catchError(this.handleError))
     }
 
-    getSingleResume(id: Resume['id']): Observable<any> {
+    getSingleResume(id: Resume['user_id']): Observable<any> {
         return this._http.get(this._resumeUrl + `/${id}`, httpOptions)
             .pipe(tap(data => console.log(data)),
                 catchError(this.handleError))
