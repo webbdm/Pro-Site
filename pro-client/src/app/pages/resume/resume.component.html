@@ -1,0 +1,53 @@
+<div class="resume-wrapper">
+    <div class="resume-info">
+        <img class="photo" src="{{img_url}}" />
+        <div class="info-text">
+            <p>{{resume.bio}}</p>
+        </div>
+
+        <div class="info-details">
+            <div class="education-header">Education</div>
+            <div class="education">
+                <div class="school">
+                    <p>Belmont University<span>2014</span></p>
+                    <span class="degree">B.S. Entertainment Business</span>
+                </div>
+                <div class="school">
+                    <p>Nashville Software School<span>2017</span></p>
+                    <span class="degree">Fullstack Development</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="resume-main">
+        <div class="resume-toggle">
+            <span>Resume</span>
+            <span>Skillset</span>
+        </div>
+
+        <div class="toggle-wrapper">
+
+            <div class="resume-jobs">
+                <div class="resume-skill-images">
+                    <img *ngFor="let skill of skills" src="{{skill.path}}" />
+                </div>
+                <div class="job">
+                    <div class="job-header">
+                        <span>Title | Employer</span>
+                        <span>Date / Years</span>
+                    </div>
+                    <div class="job-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.te velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-skills">
+            </div>
+        </div>
+    </div>
+</div>

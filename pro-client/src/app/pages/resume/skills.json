@@ -1,0 +1,20 @@
+{
+    "skills": [
+        {
+            "name": "react",
+            "path": "https://commons.wikimedia.org/wiki/File:React-icon.svg"
+        },
+        {
+            "name": "angular",
+            "path": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+            "name": "node",
+            "path": "https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png"
+        },
+        {
+            "name": "laravel",
+            "path": ""
+        }
+    ]
+}
