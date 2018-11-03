@@ -3,7 +3,7 @@ import { ResumeService } from './resume.service';
 import { Resume } from './resume';
 
 
-const skills = [
+const skills1 = [
     {
         "name": "react",
         "path": "https://arcweb.co/wp-content/uploads/2016/10/react-logo-1000-transparent-300x300.png"
@@ -29,7 +29,7 @@ const skills = [
     styleUrls: ['./resume.component.sass']
 })
 export class ResumeComponent implements OnInit {
-    resume: Resume[] = [];
+    resume: Resume[] = []; 
     errorMessage: string;
 
 
@@ -38,7 +38,7 @@ export class ResumeComponent implements OnInit {
     fetchData(): void {
         this._resumeService.getSingleResume(this.user_id)
             .subscribe(resume => {
-                this.resume = resume
+                this.resume = resume;
             },
                 error => this.errorMessage = <any>error);
     }
@@ -46,6 +46,8 @@ export class ResumeComponent implements OnInit {
     ngOnInit(): void {
         this.fetchData();
     }
+
+    skills = skills1;
 
     img_url = 'https://avatars0.githubusercontent.com/u/13399339?s=460&v=4';
 
