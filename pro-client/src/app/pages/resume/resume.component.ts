@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService } from './resume.service';
 import { Resume } from './resume';
+import { Jobs } from './jobs';
+
 
 
 const skills1 = [
@@ -30,6 +32,7 @@ const skills1 = [
 })
 export class ResumeComponent implements OnInit {
     resume: Resume[] = []; 
+    jobs: Jobs[] = [];
     errorMessage: string;
 
 
@@ -43,8 +46,18 @@ export class ResumeComponent implements OnInit {
                 error => this.errorMessage = <any>error);
     }
 
+
+    fetchJobs(): void {
+        this._resumeService.getJobs()
+            .subscribe(jobs => {
+                this.jobs = jobs;
+            },
+                error => this.errorMessage = <any>error);
+
+    }
     ngOnInit(): void {
         this.fetchData();
+        this.fetchJobs();
     }
 
     skills = skills1;

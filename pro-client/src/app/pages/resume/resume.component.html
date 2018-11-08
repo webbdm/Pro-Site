@@ -32,16 +32,13 @@
                 <div class="resume-skill-images">
                     <img *ngFor="let skill of skills" src="{{skill.path}}" />
                 </div>
-                <div class="job">
+                <div class="job" *ngFor="let job of jobs">
                     <div class="job-header">
-                        <span>Title | Employer</span>
-                        <span>Date / Years</span>
+                        <span>{{job.employer}}</span>
+                        <span>{{job.start_date}}</span>
                     </div>
                     <div class="job-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna aliqua.te velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                        </p>
+                        <p>{{job.description}}</p>
                     </div>
                 </div>
             </div>
