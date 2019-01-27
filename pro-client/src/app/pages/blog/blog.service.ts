@@ -11,12 +11,19 @@ const httpOptions = {
 @Injectable()
 export class BlogService {
     private _blogUrl = `http://blog.test/posts`;
+    private _elixirUrl = `http://localhost:4000/api/posts`;
 
     constructor(private _http: HttpClient) { }
 
 
     getPosts(): Observable<any> {
         return this._http.get(this._blogUrl)
+            .pipe(tap(data => null),
+                catchError(this.handleError))
+    }
+
+    getElixirPosts(): Observable<any> {
+        return this._http.get(this._elixirUrl)
             .pipe(tap(data => null),
                 catchError(this.handleError))
     }
