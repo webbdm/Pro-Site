@@ -11,6 +11,7 @@ const httpOptions = {
 @Injectable()
 export class ResumeService {
     private _resumeUrl = `http://blog.test/resumes`;
+    private _jobsUrl = `http://blog.test/jobs`;
     private _skillsetUrl = `http://blog.test/skillsets`;
 
     constructor(private _http: HttpClient) { }
@@ -38,6 +39,10 @@ export class ResumeService {
         return this._http.delete(this._resumeUrl + `/${resume.id}`, httpOptions)
             .pipe(tap(data => null),
                 catchError(this.handleError))
+    }
+
+    getJobs(): Observable<any>{
+        return this._http.get(this._jobsUrl).pipe(tap(data => null),catchError(this.handleError))
     }
 
     private handleError(err: HttpErrorResponse) {

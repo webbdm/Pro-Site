@@ -22,8 +22,18 @@ export class BlogComponent implements OnInit {
         error => this.errorMessage = <any>error);
   }
 
+  fetchElixir(): void {
+    this._blogService.getElixirPosts()
+      .subscribe(posts => {
+        console.log(posts.data);
+        //this.posts = posts
+      },
+        error => this.errorMessage = <any>error);
+  }
+
   ngOnInit(): void {
     this.fetchData();
+    this.fetchElixir();
   }
 
   temp_image = 'https://raw.githubusercontent.com/nss-evening-cohort-05/challenge-static-web-html-webbdm/master/images/gsmbackground.png';
