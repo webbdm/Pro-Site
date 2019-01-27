@@ -13,6 +13,11 @@ defmodule ProServerWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :json_api do 
+    plug :accepts, ["json-api"]
+    plug JaSerializer.Deserializer
+  end
+
   # This is for HTML 
   # scope "/", ProServerWeb do
   #   pipe_through :browser
@@ -22,7 +27,7 @@ defmodule ProServerWeb.Router do
 
   # Other scopes may use custom stacks.
   scope "/api", ProServerWeb do
-    pipe_through :api
+    pipe_through :json_api
 
     resources "/posts", PostController
   end
