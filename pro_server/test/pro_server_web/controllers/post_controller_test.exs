@@ -2,7 +2,7 @@ defmodule ProServerWeb.PostControllerTest do
   use ProServerWeb.ConnCase
 
   alias ProServer.ProServer
-  alias ProServer.ProServer.Post
+  alias ProServer.Post
 
   @create_attrs %{
     body: "some body",
@@ -20,7 +20,7 @@ defmodule ProServerWeb.PostControllerTest do
   end
 
   setup %{conn: conn} do
-    {:ok, conn: put_req_header(conn, "accept", "application/json")}
+    {:ok, conn: put_req_header(conn, "accept", "application/vnd.api+json")}
   end
 
   describe "index" do
@@ -39,8 +39,10 @@ defmodule ProServerWeb.PostControllerTest do
 
       assert %{
                "id" => id,
-               "body" => "some body",
-               "title" => "some title"
+               "attributes" => %{
+                 "body" => "some body",
+                 "title" => "some title"
+               }
              } = json_response(conn, 200)["data"]
     end
 
@@ -55,14 +57,16 @@ defmodule ProServerWeb.PostControllerTest do
 
     test "renders post when data is valid", %{conn: conn, post: %Post{id: id} = post} do
       conn = put(conn, Routes.post_path(conn, :update, post), post: @update_attrs)
-      assert %{"id" => ^id} = json_response(conn, 200)["data"]
+      assert %{"id" => id} = json_response(conn, 200)["data"]
 
       conn = get(conn, Routes.post_path(conn, :show, id))
 
       assert %{
                "id" => id,
-               "body" => "some updated body",
-               "title" => "some updated title"
+               "attributes" => %{
+                "body" => "some updated body",
+                "title" => "some updated title"
+               }
              } = json_response(conn, 200)["data"]
     end
 

@@ -4,7 +4,7 @@ defmodule ProServer.ProServerTest do
   alias ProServer.ProServer
 
   describe "posts" do
-    alias ProServer.ProServer.Post
+    alias ProServer.Post
 
     @valid_attrs %{body: "some body", title: "some title"}
     @update_attrs %{body: "some updated body", title: "some updated title"}
