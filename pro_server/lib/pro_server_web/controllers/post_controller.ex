@@ -4,7 +4,7 @@ defmodule ProServerWeb.PostController do
   alias ProServer.ProServer
   alias ProServer.Post
 
-  action_fallback ProServerWeb.FallbackController
+  action_fallback(ProServerWeb.FallbackController)
 
   def index(conn, _params) do
     posts = ProServer.list_posts()

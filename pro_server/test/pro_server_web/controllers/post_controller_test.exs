@@ -64,8 +64,8 @@ defmodule ProServerWeb.PostControllerTest do
       assert %{
                "id" => id,
                "attributes" => %{
-                "body" => "some updated body",
-                "title" => "some updated title"
+                 "body" => "some updated body",
+                 "title" => "some updated title"
                }
              } = json_response(conn, 200)["data"]
     end
@@ -83,9 +83,9 @@ defmodule ProServerWeb.PostControllerTest do
       conn = delete(conn, Routes.post_path(conn, :delete, post))
       assert response(conn, 204)
 
-      assert_error_sent 404, fn ->
+      assert_error_sent(404, fn ->
         get(conn, Routes.post_path(conn, :show, post))
-      end
+      end)
     end
   end
 

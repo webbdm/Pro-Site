@@ -31,4 +31,10 @@ defmodule ProServerWeb.Router do
 
     resources "/posts", PostController
   end
+
+  scope "/auth", ProServerWeb do 
+    pipe_through :json_api
+
+    get "/:provider", SessionController, :request
+  end
 end
