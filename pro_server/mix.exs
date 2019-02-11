@@ -24,6 +24,7 @@ defmodule ProServer.MixProject do
     ]
   end
 
+
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
@@ -46,7 +47,8 @@ defmodule ProServer.MixProject do
       {:ja_serializer, "~> 0.13.0"},
       {:ueberauth, "~> 0.5"},
       {:ueberauth_google, "~> 0.7"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:dotenv, "~> 3.0.0"}
     ]
   end
 

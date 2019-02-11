@@ -19,11 +19,11 @@ defmodule ProServerWeb.Router do
   end
 
   # This is for HTML 
-  # scope "/", ProServerWeb do
-  #   pipe_through :browser
+  scope "/", ProServerWeb do
+    pipe_through :browser
 
-  #   get "/", PageController, :index
-  # end
+    get "/", PageController, :index
+  end
 
   # Other scopes may use custom stacks.
   scope "/api", ProServerWeb do
@@ -33,8 +33,9 @@ defmodule ProServerWeb.Router do
   end
 
   scope "/auth", ProServerWeb do 
-    pipe_through :json_api
+    pipe_through :browser
 
     get "/:provider", SessionController, :request
+    get "/:provider/callback", SessionController, :create
   end
 end
