@@ -8,6 +8,7 @@ defmodule ProServerWeb.PostController do
 
   def index(conn, _params) do
     posts = ProServer.list_posts()
+
     render(conn, "index.json-api", data: posts)
   end
 

@@ -15,6 +15,8 @@ defmodule ProServerWeb.Router do
 
   pipeline :json_api do 
     plug :accepts, ["json-api"]
+    plug :fetch_session
+    plug ProServer.Plugs.SetUser
     plug JaSerializer.Deserializer
   end
 
@@ -35,6 +37,7 @@ defmodule ProServerWeb.Router do
   scope "/auth", ProServerWeb do 
     pipe_through :browser
 
+    get "/signout", SessionController, :delete
     get "/:provider", SessionController, :request
     get "/:provider/callback", SessionController, :create
   end
