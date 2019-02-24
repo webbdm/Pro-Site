@@ -22,6 +22,7 @@ defmodule ProServer.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import ProServer.DataCase
+      import ProServer.TestHelpers
     end
   end
 

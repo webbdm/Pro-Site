@@ -19,6 +19,8 @@ defmodule ProServerWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
+
+      import ProServer.TestHelpers
       alias ProServerWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
