@@ -1,5 +1,6 @@
 defmodule ProServerWeb.Router do
   use ProServerWeb, :router
+  
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -10,6 +11,7 @@ defmodule ProServerWeb.Router do
   end
 
   pipeline :api do
+    plug CORSPlug, origin: "*"
     plug :accepts, ["json"]
   end
 
@@ -25,5 +27,6 @@ defmodule ProServerWeb.Router do
     pipe_through :api
 
     resources "/posts", PostController
+    get "/posts/:id", PostController, :show
   end
 end

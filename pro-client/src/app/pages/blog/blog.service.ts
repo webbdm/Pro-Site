@@ -17,7 +17,7 @@ export class BlogService {
 
 
     getPosts(): Observable<any> {
-        return this._http.get(this._blogUrl)
+        return this._http.get(this._elixirUrl)
             .pipe(tap(data => null),
                 catchError(this.handleError))
     }
@@ -29,8 +29,8 @@ export class BlogService {
     }
 
     getSinglePost(id: Post['id']): Observable<any> {
-        return this._http.get(this._blogUrl + `/${id}`, httpOptions)
-            .pipe(tap(null),
+        return this._http.get(this._elixirUrl + `/${id}`)
+            .pipe(tap(data => null),
                 catchError(this.handleError))
     }
 

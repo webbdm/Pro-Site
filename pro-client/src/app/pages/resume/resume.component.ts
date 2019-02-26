@@ -56,8 +56,8 @@ export class ResumeComponent implements OnInit {
 
     }
     ngOnInit(): void {
-        this.fetchData();
-        this.fetchJobs();
+       // this.fetchData();
+       // this.fetchJobs();
     }
 
     skills = skills1;
