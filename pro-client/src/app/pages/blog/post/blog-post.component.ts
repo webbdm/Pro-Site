@@ -22,7 +22,7 @@ export class BlogPostComponent implements OnInit {
     this.editing = false;
 
     let id = this.route.snapshot.params['post'];
-    this._blogService.getSinglePost(id).subscribe(post => this.post = post);
+    this._blogService.getSinglePost(id).subscribe(post => this.post = post.data);
     
   }
 

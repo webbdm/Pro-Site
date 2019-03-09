@@ -4,10 +4,6 @@ import { Observable, Observer } from "rxjs";
 import { Post } from "./post";
 import { tap, catchError } from "rxjs/operators";
 
-const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
 @Injectable()
 export class BlogService {
     private _blogUrl = `http://blog.test/posts`;
@@ -17,7 +13,7 @@ export class BlogService {
 
 
     getPosts(): Observable<any> {
-        return this._http.get(this._blogUrl)
+        return this._http.get(this._elixirUrl)
             .pipe(tap(data => null),
                 catchError(this.handleError))
     }
@@ -29,19 +25,19 @@ export class BlogService {
     }
 
     getSinglePost(id: Post['id']): Observable<any> {
-        return this._http.get(this._blogUrl + `/${id}`, httpOptions)
-            .pipe(tap(null),
+        return this._http.get(this._elixirUrl + `/${id}`)
+            .pipe(tap(data => null),
                 catchError(this.handleError))
     }
 
     updatePost(post: Post): Observable<any> {
-        return this._http.put(this._blogUrl + `/${post.id}`, JSON.stringify(post), httpOptions)
+        return this._http.put(this._blogUrl + `/${post.id}`, JSON.stringify(post))
             .pipe(tap(data => null),
                 catchError(this.handleError))
     }
 
     deletePost(post: Post): Observable<any> {
-        return this._http.delete(this._blogUrl + `/${post.id}`, httpOptions)
+        return this._http.delete(this._blogUrl + `/${post.id}`)
             .pipe(tap(data => null),
                 catchError(this.handleError))
     }

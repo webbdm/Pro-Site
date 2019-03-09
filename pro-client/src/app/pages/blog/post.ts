@@ -10,12 +10,9 @@
 
 export class Post {
     constructor(
-        public id: number, 
-        public title: string, 
-        public description: string,
-        public img_url: string,
-        public trip_date: string,
-        public park_id: number,
-        public campsite_id: number) { 
+        public id: number,
+        public title: string,
+        public body: string
+    ) {
     }
- }
+}
