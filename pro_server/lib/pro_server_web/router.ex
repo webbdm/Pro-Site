@@ -28,5 +28,7 @@ defmodule ProServerWeb.Router do
 
     resources "/posts", PostController
     get "/posts/:id", PostController, :show
+
+    resources "/jobs", JobController
   end
 end

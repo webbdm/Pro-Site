@@ -50,14 +50,14 @@ export class ResumeComponent implements OnInit {
     fetchJobs(): void {
         this._resumeService.getJobs()
             .subscribe(jobs => {
-                this.jobs = jobs;
+                this.jobs = jobs.data;
             },
                 error => this.errorMessage = <any>error);
 
     }
     ngOnInit(): void {
        // this.fetchData();
-       // this.fetchJobs();
+       this.fetchJobs();
     }
 
     skills = skills1;
